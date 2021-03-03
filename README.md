@@ -1,9 +1,9 @@
 # javascript 复习
 
 ## Array
- - [forEach]('./../Array/forEach.js')
- - [map]('./../Array/map.js')
- - [reduce]('./../Array/reduce.js')
+ - [forEach](./../Array/forEach.js)
+ - [map](./../Array/map.js)
+ - [reduce](./../Array/reduce.js)
 
 ## Function
 ## Object
@@ -12,7 +12,7 @@
 
 类型|名称|实现细节
 --|:--|:--|
-Array | forEach | [代码]('./../Array/forEach.js')
-Array | map | [代码]('./../Array/map.js')
-Array | reduce | [代码]('./../Array/reduce.js')
+Array | forEach | [代码](./Array/forEach.js)
+Array | map | [代码](./../Array/map.js)
+Array | reduce | [代码](./../Array/reduce.js)
 
