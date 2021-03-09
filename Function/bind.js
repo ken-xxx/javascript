@@ -1,4 +1,3 @@
-
 var bind1 = function(_self = globalThis){
   var fn = this;
   var args = [...arguments].slice(1);
@@ -13,6 +12,7 @@ var bind1 = function(_self = globalThis){
   result.prototype = Object.create(fn.prototype)
   return result
 }
+
 Function.prototype.bind1 = bind1;
 
 var obj =  {
