@@ -1,22 +1,28 @@
 
-var bind1 = function(){
-  var fn  = this ,_self = [].slice.call(arguments,0)[0] || global;
-  var _args = [].slice.call(arguments,1);
-  var temp = function (){}
-  function runFun (){
-    var args = [].slice.call(arguments).concat(_args)
-    // 构造函数使用时会this指向错误
-    fn.apply(this instanceof temp?this:fn,args)
+var bind1 = function(_self = globalThis){
+  var fn = this;
+  var args = [...arguments].slice(1);
+  var result = function (){
+    var newArgs = [...arguments];
+    if(this instanceof result){
+      fn.apply(this,newArgs.concat(args))
+    }else{
+      fn.apply(_self,newArgs.concat(args))
+    }
   }
-  // 不直接绑定prototype 是因为 修改runFun 的prototype 会导致 this.prototype修改
-  runFun.prototype = this.prototype;
-  temp.prototype = new runFun()
-  return temp
+  result.prototype = Object.create(fn.prototype)
+  return result
 }
 Function.prototype.bind1 = bind1;
 
-let value = 2;
-let foo = {
-    value: 1
-};
+var obj =  {
+  a:1
+}
 
+const fn = function() {
+  this.a = 2;
+  console.log(this.a);
+}
+
+var fun = fn.bind1(obj);
+fun();

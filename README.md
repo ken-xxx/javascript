@@ -6,7 +6,10 @@
  - [reduce]('./../Array/reduce.js)
  - [filter]('./../Array/filter.js)
  - [every]('./../Array/every.js)
-
+ - [fill]('./../Array/fill.js)
+ - [some]('./../Array/some.js)
+ - [slice]('./../Array/slice.js)
+ - [join]('./../Array/join.js)
 
 
 
